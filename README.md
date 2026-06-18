@@ -5,7 +5,49 @@
     <title>Мой сайт</title>
 </head>
 <body>
-    <h1>Привет, мир!</h1>
-    <p>Это мой первый сайт на GitHub Pages.</p>
+    <h1>2 задание</h1>
+    <pre>itertools import *
+def f(x,y,z,w):
+    return (w==z) or (not (y<=w)) or (not x)
+for a1,a2,a3,a4,a5 in product([0,1],repeat=5):
+    t = [(a1,0,1,0),(a2,1,1,a3),(0,a4,a5,0)]
+    if len (set(t)) == 3:
+        for p in permutations ('xyzw'):
+            if [f(**dict (zip(p,r))) for r in t ] == [0,0,0]:
+                print(p)</pre>
+    <h1>5 задание</h1>
+    <pre># region 1
+def n3(num):
+        if num == 0:
+            return '0'
+        res = ''
+        while num > 0:
+            res = str(num % 3) + res
+            num //= 3
+        return res
+ans = []
+for i in range(1,10000):
+    k3 = n3(i)
+    if i % 3 == 0:
+        k3 = '1' + k3 +  '02'
+    else:
+        k3 = k3 + str(n3(((i%3)*5)))
+    result = int(k3,3)
+    if result >= 177:
+        ans.append(i)
+print(min(ans))
+# endregion
+mand = []
+for n in range(1,1000):
+    k = bin(n)[2:]
+    if k.count('1') % 2 == 0:
+        k = "10" + k[2:] + "0"
+    else:
+        k = "11" + k[2:] + "1"
+    res = int(k,2)
+    if res <= 19:
+        mand.append(n)
+print(max(mand))</pre>
+    <h1>7 задание</h1>
 </body>
 </html>
