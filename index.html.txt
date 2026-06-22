@@ -392,6 +392,26 @@ for s in open('9.txt'):
         <span class="lang-label">Python</span>
     </div>
 </section>
+<!-- ===== ЗАДАНИЕ 11 ===== -->
+<section class="task-card">
+    <div class="task-header">
+        <span class="task-number">№ 9</span>
+        <span class="task-title">Работа с файлами (таблицы)</span>
+        <span class="task-badge">✏️ Python 3from math import *
+for  l in range(1,1000):
+    kod = 10 + 62
+    bit = ceil(log2(kod))
+    byte = ceil (l * bit/8)
+    if 5895222 * byte > 23 * 1024 *1024:
+        print(l)
+        break</span>
+    </div>
+    <div class="code-wrapper">
+        <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+        <pre><code class="language-python"></code></pre>
+        <span class="lang-label">Python</span>
+    </div>
+</section>
         <!-- Футер -->
         <footer class="footer">
             Подготовка к ЕГЭ по информатике · 
