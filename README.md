@@ -370,16 +370,17 @@ for x in product(sorted('строка'), repeat=5):
                 <span class="lang-label">Python</span>
             </div>
         </section>
+
         <!-- ===== ЗАДАНИЕ 9 ===== -->
-<section class="task-card">
-    <div class="task-header">
-        <span class="task-number">№ 9</span>
-        <span class="task-title">Работа с файлами (таблицы)</span>
-        <span class="task-badge">✏️ Python 3</span>
-    </div>
-    <div class="code-wrapper">
-        <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
-        <pre><code class="language-python">k = 0
+        <section class="task-card">
+            <div class="task-header">
+                <span class="task-number">№ 9</span>
+                <span class="task-title">Работа с файлами (таблицы)</span>
+                <span class="task-badge">✏️ Python 3</span>
+            </div>
+            <div class="code-wrapper">
+                <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+                <pre><code class="language-python">k = 0
 
 for s in open('9.txt'):
     a = [int(x) for x in s.split()]
@@ -388,9 +389,109 @@ for s in open('9.txt'):
     a1 = [x for x in a if a.count(x) == 1]
     if len(a3) == 3 and len(a1) == 4 and sum(a1) / len(a1) > a3[0]:
         print(k)</code></pre>
-        <span class="lang-label">Python</span>
-    </div>
-</section>
+                <span class="lang-label">Python</span>
+            </div>
+        </section>
+
+        <!-- ===== ЗАДАНИЕ 11 ===== -->
+        <section class="task-card">
+            <div class="task-header">
+                <span class="task-number">№ 11</span>
+                <span class="task-title">Системы счисления (поиск минимального)</span>
+                <span class="task-badge">✏️ Python 3</span>
+            </div>
+            <div class="code-wrapper">
+                <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+                <pre><code class="language-python">from math import *
+
+for l in range(1, 1000):
+    kod = 10 + 62
+    bit = ceil(log2(kod))
+    byte = ceil(l * bit / 8)
+    if 5895222 * byte > 23 * 1024 * 1024:
+        print(l)
+        break</code></pre>
+                <span class="lang-label">Python</span>
+            </div>
+        </section>
+
+        <!-- ===== ЗАДАНИЕ 13 ===== -->
+        <section class="task-card">
+            <div class="task-header">
+                <span class="task-number">№ 13</span>
+                <span class="task-title">Адреса</span>
+                <span class="task-badge">✏️ Python 3</span>
+            </div>
+            <div class="code-wrapper">
+                <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+                <pre><code class="language-python">from ipaddress import *
+
+net = ip_network('146.180.173.153/255.192.0.0', 0)
+print(net[-2])</code></pre>
+                <span class="lang-label">Python</span>
+            </div>
+        </section>
+
+        <!-- ===== ЗАДАНИЕ 14 ===== -->
+        <section class="task-card">
+            <div class="task-header">
+                <span class="task-number">№ 14</span>
+                <span class="task-title">Системы счисления (поиск максимального)</span>
+                <span class="task-badge">✏️ Python 3</span>
+            </div>
+            <div class="code-wrapper">
+                <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+                <pre><code class="language-python">for x in range(3000, 1, -1):
+    a = 9 * 11**210 + 8 * 11**150 - x
+    k = 0
+    while a > 0:
+        if a % 11 == 0:
+            k += 1
+        a //= 11
+    if k == 60:
+        print(x)
+        break
+
+results = []
+for x in range(22):
+    st1 = (7 * 22**0 + 5 * 22**1 + x * 22**2 + 3 * 22**3 + 
+           1 * 22**4 + 3 * 22**5 + 2 * 22**6 + 1 * 22**7)
+    st2 = (1 * 22**0 + 6 * 22**1 + 5 * 22**2 + 4 * 22**3 + 
+           3 * 22**4 + x * 22**5 + 1 * 22**6)
+    summer = st2 + st1
+    if summer % 21 == 0:
+        results.append(summer // 21)
+
+print(max(results))
+number = 5*1296**2021 - 4*216**2022 + 3*36**2023 - 2*6**2024 - 2025
+count = 0
+while number > 0:
+    digit = number % 36
+    if digit % 2 == 0:
+        count +=1
+    number = number // 36
+print(count)</code></pre>        
+<!-- ===== ЗАДАНИЕ 15 ===== -->
+        <section class="task-card">
+            <div class="task-header">
+                <span class="task-number">№ 15</span>
+                <span class="task-title">Отрезки</span>
+                <span class="task-badge">✏️ Python 3</span>
+            </div>
+            <div class="code-wrapper">
+                <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+                <pre><code class="language-python">def f(x,y):
+    return x > a or y > a or x + 2*y < 80
+for a in range(1000,1,-1):
+    if all (f(x,y) == 1 for x in range(1000) for y in range(1000)):
+        print(a)
+        break</code></pre>
+                <span class="lang-label">Python</span>
+            </div>
+        </section>
+                <span class="lang-label">Python</span>
+            </div>
+        </section>
 
         <!-- Футер -->
         <footer class="footer">
@@ -407,7 +508,7 @@ for s in open('9.txt'):
             });
             hljs.highlightAll();
         });
-
+        
         // === Функция копирования ===
         function copyCode(btn) {
             // Находим блок <code> внутри этого .code-wrapper
