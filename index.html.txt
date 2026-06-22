@@ -404,6 +404,8 @@ for s in open ('9txt'):
             });
             hljs.highlightAll();
         });
+    </div>
+</section>
 
         // === Функция копирования ===
         function copyCode(btn) {
