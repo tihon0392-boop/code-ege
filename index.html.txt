@@ -371,12 +371,6 @@ for x in product(sorted('строка'), repeat=5):
             </div>
         </section>
 
-        <!-- Футер -->
-        <footer class="footer">
-            Подготовка к ЕГЭ по информатике · 
-            <a href="#" onclick="event.preventDefault()">Все задания</a>
-        </footer>
-    </div>
 <!-- ===== ЗАДАНИЕ 9 ===== -->
 <section class="task-card">
     <div class="task-header">
@@ -398,6 +392,12 @@ for s in open('9.txt'):
         <span class="lang-label">Python</span>
     </div>
 </section>
+        <!-- Футер -->
+        <footer class="footer">
+            Подготовка к ЕГЭ по информатике · 
+            <a href="#" onclick="event.preventDefault()">Все задания</a>
+        </footer>
+    </div>
 
     <script>
         // === Инициализация подсветки синтаксиса ===
