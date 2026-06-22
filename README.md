@@ -471,24 +471,22 @@ while number > 0:
         count +=1
     number = number // 36
 print(count)</code></pre>        
-<!-- ===== ЗАДАНИЕ 15 ===== -->
+    <!-- ===== ЗАДАНИЕ 15 ===== -->   
         <section class="task-card">
             <div class="task-header">
                 <span class="task-number">№ 15</span>
-                <span class="task-title">Отрезки</span>
+                <span class="task-title">Отрезки (логические выражения)</span>
                 <span class="task-badge">✏️ Python 3</span>
             </div>
             <div class="code-wrapper">
                 <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
-                <pre><code class="language-python">def f(x,y):
-    return x > a or y > a or x + 2*y < 80
-for a in range(1000,1,-1):
-    if all (f(x,y) == 1 for x in range(1000) for y in range(1000)):
+                <pre><code class="language-python">def f(x, y):
+    return x > a or y > a or x + 2 * y < 80
+
+for a in range(1000, 1, -1):
+    if all(f(x, y) == 1 for x in range(1000) for y in range(1000)):
         print(a)
         break</code></pre>
-                <span class="lang-label">Python</span>
-            </div>
-        </section>
                 <span class="lang-label">Python</span>
             </div>
         </section>
