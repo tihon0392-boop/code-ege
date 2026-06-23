@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ЕГЭ Информатика — Решения заданий</title>
-    
+
     <!-- Подключаем стили highlight.js (тёмная тема) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
-    
+
     <!-- Подключаем саму библиотеку highlight.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <!-- Подключаем поддержку Python -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
-    
+
     <style>
         /* === Глобальные стили === */
         * {
@@ -272,11 +272,10 @@
 </head>
 <body>
     <div class="container">
-        
+
         <!-- Заголовок страницы -->
         <header class="page-header">
             <h1>⚡ ЕГЭ Информатика</h1>
-            <p>Решения заданий с подсветкой синтаксиса и удобным интерфейсом</p>
         </header>
 
         <!-- ===== ЗАДАНИЕ 2 ===== -->
@@ -454,9 +453,9 @@ print(net[-2])</code></pre>
 
 results = []
 for x in range(22):
-    st1 = (7 * 22**0 + 5 * 22**1 + x * 22**2 + 3 * 22**3 + 
+    st1 = (7 * 22**0 + 5 * 22**1 + x * 22**2 + 3 * 22**3 +
            1 * 22**4 + 3 * 22**5 + 2 * 22**6 + 1 * 22**7)
-    st2 = (1 * 22**0 + 6 * 22**1 + 5 * 22**2 + 4 * 22**3 + 
+    st2 = (1 * 22**0 + 6 * 22**1 + 5 * 22**2 + 4 * 22**3 +
            3 * 22**4 + x * 22**5 + 1 * 22**6)
     summer = st2 + st1
     if summer % 21 == 0:
@@ -472,9 +471,9 @@ while number > 0:
     number = number // 36
 print(count)</code></pre>
 <span class="lang-label">Python</span> </div>
-        </section> 
+        </section>
 
-    <!-- ===== ЗАДАНИЕ 15 ===== -->   
+    <!-- ===== ЗАДАНИЕ 15 ===== -->
         <section class="task-card">
             <div class="task-header">
                 <span class="task-number">№ 15</span>
@@ -494,9 +493,66 @@ for a in range(1000, 1, -1):
             </div>
         </section>
 
+
+    <!-- ===== ЗАДАНИЕ 16 ===== -->
+        <section class="task-card">
+            <div class="task-header">
+                <span class="task-number">№ 16</span>
+                <span class="task-title">Функции (логические выражения)</span>
+                <span class="task-badge">✏️ Python 3</span>
+            </div>
+            <div class="code-wrapper">
+                <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+                <pre><code class="language-python">from functools import *
+def f(n):
+    return 3*g(n-3)+7
+@lru_cache(None)
+def g(n):
+    if n<=20: return n+2
+    return g(n-3)+1
+for i in range(20,37800): g(i)
+print(f(37811))
+
+def f(n):
+    if n==257472: return 7238487
+    return  (n+4)*f(n-5)
+print((f(257_487)/683 + 67*f(257477))/f(257472))
+
+from functools import *
+@lru_cache(100)
+def f(n):
+    if n<10:return 3
+    return (n+4)*f(n-5)
+
+for i in range(10,257490): f(i)
+print ((f(257_487)//683 + 67* f(257_477)) / f(257_472))</code></pre>
+                <span class="lang-label">Python</span>
+            </div>
+        </section>
+
+  <!-- ===== ЗАДАНИЕ 17 ===== -->
+        <section class="task-card">
+            <div class="task-header">
+                <span class="task-number">№ 17</span>
+                <span class="task-title">Файлы с числами (логические выражения)</span>
+                <span class="task-badge">✏️ Python 3</span>
+            </div>
+            <div class="code-wrapper">
+                <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+                <pre><code class="language-python">a = [int(x) for x in open('17t')]
+m = max(x for x in a if abs(x)%100==33)
+ans = []
+for x,y,z in zip(a,a[1:],a[2:]):
+    if (10 <= abs(x)<100)+(10<=abs(y)<100)+(10<=abs(z)<100)==2 and \
+            (x+y+z)**2 < m:
+        ans.append(x+y+z)
+print (len(ans),max(ans))</code></pre>
+                <span class="lang-label">Python</span>
+            </div>
+        </section>
         <!-- Футер -->
         <footer class="footer">
-            Подготовка к ЕГЭ по информатике · 
+            Подготовка к ЕГЭ по информатике ·
             <a href="#" onclick="event.preventDefault()">Все задания</a>
         </footer>
     </div>
@@ -509,22 +565,22 @@ for a in range(1000, 1, -1):
             });
             hljs.highlightAll();
         });
-        
+
         // === Функция копирования ===
         function copyCode(btn) {
             // Находим блок <code> внутри этого .code-wrapper
             const wrapper = btn.closest('.code-wrapper');
             const codeBlock = wrapper.querySelector('code');
-            
+
             // Получаем текст (без лишних пробелов по краям)
             const text = codeBlock.textContent;
-            
+
             navigator.clipboard.writeText(text).then(() => {
                 // Визуальная обратная связь
                 const originalText = btn.innerHTML;
                 btn.innerHTML = '✅ Скопировано!';
                 btn.classList.add('copied');
-                
+
                 setTimeout(() => {
                     btn.innerHTML = originalText;
                     btn.classList.remove('copied');
@@ -537,7 +593,7 @@ for a in range(1000, 1, -1):
                 textarea.select();
                 document.execCommand('copy');
                 document.body.removeChild(textarea);
-                
+
                 btn.innerHTML = '✅ Скопировано!';
                 btn.classList.add('copied');
                 setTimeout(() => {
