@@ -2,7 +2,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ЕГЭ Информатика</title>
 
     <!-- Подключаем стили highlight.js (тёмная тема) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
@@ -272,10 +271,6 @@
 <body>
     <div class="container">
 
-        <!-- Заголовок страницы -->
-        <header class="page-header">
-            <h1> ЕГЭ Информатика</h1>
-        </header>
 
         <!-- ===== ЗАДАНИЕ 2 ===== -->
         <section class="task-card">
